@@ -1,0 +1,5 @@
+# Reyes Connect: sitio de muestra para negocios locales.
+# La portada (español e inglés) se puede indexar.
+# Las páginas de negocio de ejemplo llevan la etiqueta noindex dentro de cada página.
+User-agent: *
+Allow: /

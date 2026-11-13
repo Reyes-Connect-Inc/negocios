@@ -1,0 +1,522 @@
+/* Páginas de negocio de ejemplo creadas por Reyes Connect.
+   Una sola hoja para las tres; cada negocio cambia sus colores con una clase en <body>. */
+
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --ancho: 1040px;
+}
+
+.tema-taller {
+  --tinta: #14202b;
+  --tinta-2: #45525e;
+  --acento: #f6a531;
+  --acento-osc: #8f4a00;
+  --fondo: #fbf7f0;
+  --suave: #f4e9d6;
+  --sup: #ffffff;
+  --borde: #e6dcc9;
+  --titulo: var(--sans);
+  --peso-titulo: 800;
+  --espacio-titulo: -.02em;
+  --encuadre: 50% 46%;
+}
+.tema-salon {
+  --tinta: #3a2231;
+  --tinta-2: #6b5361;
+  --acento: #f0907a;
+  --acento-osc: #a23f2b;
+  --fondo: #fdf6f1;
+  --suave: #f9e3da;
+  --sup: #ffffff;
+  --borde: #f0d8cd;
+  --titulo: var(--serif);
+  --peso-titulo: 600;
+  --espacio-titulo: -.01em;
+  --encuadre: 50% 52%;
+}
+.tema-tienda {
+  --tinta: #173a4e;
+  --tinta-2: #4b6676;
+  --acento: #e0a544;
+  --acento-osc: #80520a;
+  --fondo: #f9f5ea;
+  --suave: #e4eef0;
+  --sup: #ffffff;
+  --borde: #e3dcc6;
+  --titulo: var(--serif);
+  --peso-titulo: 700;
+  --espacio-titulo: -.01em;
+  --encuadre: 50% 62%;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: var(--acento-osc); }
+
+:focus-visible {
+  outline: 3px solid var(--acento-osc);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.ancho {
+  width: 100%;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--titulo);
+  font-weight: var(--peso-titulo);
+  letter-spacing: var(--espacio-titulo);
+  line-height: 1.12;
+}
+
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.salto {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 70;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #e7b35c;
+  color: #08080c;
+  font-weight: 700;
+  text-decoration: none;
+}
+.salto:focus { top: 12px; }
+
+/* ---------- Aviso discreto de ejemplo ---------- */
+
+.aviso {
+  background: #08080c;
+  color: #d9d1c0;
+  font-size: 13px;
+}
+.aviso .ancho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 36px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.aviso a { color: #e7b35c; font-weight: 600; white-space: nowrap; }
+.aviso .enlaces { display: flex; gap: 14px; flex: none; }
+
+/* ---------- Cabecera del negocio ---------- */
+
+.cabecera .ancho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.nombre {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--titulo);
+  font-weight: var(--peso-titulo);
+  font-size: 19px;
+  letter-spacing: var(--espacio-titulo);
+}
+.emblema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--tinta);
+  color: var(--acento);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.menu { display: none; gap: 6px; }
+.menu a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.menu a:hover { background: var(--suave); }
+
+/* ---------- Portada ---------- */
+
+.portada .ancho { display: grid; gap: 22px; padding-bottom: 34px; }
+.portada .arte {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 520;
+  object-fit: cover;
+  object-position: var(--encuadre, 50% 50%);
+  border-radius: 22px;
+  background: var(--suave);
+}
+.etiqueta {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--suave);
+  color: var(--tinta);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+h1 { font-size: clamp(36px, 10vw, 60px); }
+.portada .frase {
+  margin: 14px 0 0;
+  max-width: 30em;
+  color: var(--tinta-2);
+  font-size: 19px;
+}
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 12px 20px;
+  border: 2px solid var(--tinta);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--tinta);
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.boton svg { width: 20px; height: 20px; flex: none; }
+.boton-lleno { background: var(--tinta); color: #fff; }
+.boton-acento { background: var(--acento); border-color: var(--acento); color: var(--tinta); }
+.boton:hover { filter: brightness(1.06); }
+.telefono-texto {
+  margin: 14px 0 0;
+  color: var(--tinta-2);
+  font-size: 15px;
+}
+.telefono-texto strong { color: var(--tinta); font-size: 17px; }
+
+/* ---------- Secciones ---------- */
+
+.seccion { padding: 44px 0; }
+.seccion.tono { background: var(--suave); }
+.seccion h2 { font-size: clamp(28px, 7vw, 40px); }
+.seccion .bajada { margin: 10px 0 0; color: var(--tinta-2); max-width: 38em; }
+.ejemplo-nota {
+  margin: 16px 0 0;
+  color: var(--tinta-2);
+  font-size: 14px;
+}
+
+/* Servicios */
+.servicios {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.servicios li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 14px;
+  align-items: baseline;
+  padding: 16px 18px;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  background: var(--sup);
+}
+.servicios h3 { font-size: 19px; }
+.servicios .valor {
+  color: var(--acento-osc);
+  font-weight: 800;
+  font-size: 17px;
+  white-space: nowrap;
+}
+.servicios p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--tinta-2);
+  font-size: 15px;
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.galeria figure { margin: 0; }
+.galeria img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  background: var(--suave);
+}
+.galeria figcaption {
+  margin-top: 6px;
+  color: var(--tinta-2);
+  font-size: 14px;
+}
+
+/* Reseñas */
+.resenas {
+  display: grid;
+  gap: 14px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 20px 18px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background: var(--sup);
+}
+.resenas p { margin: 0; color: var(--tinta-2); }
+.resenas .boton { width: 100%; padding-left: 12px; padding-right: 12px; font-size: 15px; text-align: center; }
+
+/* Horario y dirección */
+.visita { display: grid; gap: 18px; margin-top: 24px; }
+.caja {
+  padding: 20px 18px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background: var(--sup);
+}
+.caja h3 { font-size: 20px; margin-bottom: 10px; }
+.horario { width: 100%; border-collapse: collapse; }
+.horario th, .horario td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+  font-weight: 400;
+}
+.horario tr:last-child th, .horario tr:last-child td { border-bottom: 0; }
+.horario td { text-align: right; font-weight: 700; white-space: nowrap; }
+.direccion { margin: 0 0 14px; font-style: normal; font-size: 18px; font-weight: 700; }
+.direccion small { display: block; margin-top: 4px; color: var(--tinta-2); font-size: 14px; font-weight: 400; }
+.mapa {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 420;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: var(--suave);
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+  padding: 30px 0 calc(116px + env(safe-area-inset-bottom, 0px));
+  background: var(--tinta);
+  color: rgba(255, 255, 255, .82);
+  font-size: 15px;
+}
+.pie .nombre-pie {
+  margin: 0 0 6px;
+  color: #fff;
+  font-family: var(--titulo);
+  font-weight: var(--peso-titulo);
+  font-size: 22px;
+}
+.pie p { margin: 6px 0; }
+.pie a { color: var(--acento); font-weight: 700; }
+.pie .creditos {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  font-size: 14px;
+}
+
+/* ---------- Barra fija de acciones (teléfono) ---------- */
+
+.barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+  background: #ffffff;
+  border-top: 1px solid var(--borde);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, .08);
+}
+.barra a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-height: 56px;
+  padding: 6px 2px;
+  border-radius: 12px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+.barra a svg { width: 22px; height: 22px; }
+.barra a.principal { background: var(--tinta); color: #fff; }
+
+/* ---------- Hoja que explica cada botón de ejemplo (sin scripts) ---------- */
+
+.hoja {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(8, 8, 12, .62);
+}
+.hoja:target { display: flex; }
+.hoja:focus { outline: none; }
+.hoja .nr { white-space: nowrap; }
+.hoja .fondo-cerrar {
+  position: absolute;
+  inset: 0;
+}
+.hoja .panel {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 22px calc(22px + env(safe-area-inset-bottom, 0px));
+  border-radius: 22px 22px 0 0;
+  background: #101016;
+  color: #f5eedf;
+  font-family: var(--sans);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, .45);
+}
+.hoja .panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(90deg, transparent, #e7b35c, #22d3ee, transparent);
+  opacity: .85;
+}
+.hoja .rotulo {
+  margin: 0 0 8px;
+  color: #e7b35c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.hoja h2 {
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: 22px;
+  color: #f5eedf;
+}
+.hoja p { margin: 10px 0 0; color: #cfc7b6; }
+.hoja .acciones { display: grid; gap: 10px; margin-top: 18px; }
+.hoja .accion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 10px 16px;
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  color: #f5eedf;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.hoja .accion.miel { background: #e7b35c; border-color: #e7b35c; color: #08080c; }
+.hoja :focus-visible { outline-color: #22d3ee; }
+
+/* ---------- Pantallas anchas ---------- */
+
+@media (min-width: 820px) {
+  body { font-size: 18px; }
+  .pie { padding-bottom: 34px; }
+  .resenas .boton { width: auto; padding-left: 20px; padding-right: 20px; font-size: 17px; }
+  .barra { display: none; }
+  .menu { display: flex; }
+  .portada .ancho {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 44px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  .portada .arte { order: 2; }
+  .seccion { padding: 68px 0; }
+  .servicios { grid-template-columns: 1fr 1fr; }
+  .galeria { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .resenas { grid-template-columns: 1fr auto; padding: 24px; }
+  .visita { grid-template-columns: 1fr 1fr; align-items: start; }
+  .hoja { align-items: center; }
+  .hoja .panel { border-radius: 22px; }
+  .hoja .panel::before { border-radius: 22px 22px 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
