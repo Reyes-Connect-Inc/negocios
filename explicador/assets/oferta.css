@@ -241,3 +241,12 @@ button.boton-linea { background: transparent; }
 
 /* Un enlace con clase boton y el atributo hidden no debe verse. */
 [hidden]{display:none!important}
+
+/* Precio regular tachado y ahorro. Lanzamiento hasta el 30-nov-2026; desde el 1-dic se cobra el precio tachado. */
+.antes { margin: 12px 0 -8px; color: var(--tenue); font-size: 17px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.antes s { text-decoration-thickness: 1.5px; }
+.ahorro { display: inline-block; padding: 3px 10px; border-radius: 999px; background: rgba(231, 179, 92, .16); color: var(--miel); font-weight: 700; font-size: 13px; letter-spacing: .02em; white-space: nowrap; }
+.nota s, .opcion-precio s, .anual s { color: var(--tenue); font-weight: 400; }
+.opcion-precio s { display: block; font-size: 13px; }
+.nota b, .anual b { color: var(--miel-clara); }
+.anual { margin: 22px 0 0; padding: 14px 18px; border: 1px solid var(--borde); border-radius: var(--radio); color: var(--crema); font-size: 16px; }
