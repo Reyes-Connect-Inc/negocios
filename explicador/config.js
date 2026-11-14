@@ -13,11 +13,11 @@
      POST JSON con CORS. Guarda negocio, opción, teléfono y el permiso P2 (texto, versión, fecha, hora, IP y navegador),
      no toca el flujo de seguros, y contesta { ok:true, id:"..." }. Solo con ese «ok» la página dice «Anotamos tu pedido»
      o manda al pago. Mientras sea null, la página no pide datos: dice que llames al 786-835-2214.
-   whatsappEmpresa: el número de WhatsApp de la empresa, cuando exista y Muse esté probado con el teléfono de Lázaro.
+   whatsappEmpresa: el número de WhatsApp de la empresa, cuando exista y Muse esté probado con el teléfono de la empresa.
      Mientras sea null, la página no promete mensajes por WhatsApp.
 
    ENLACES DE PAGO: mientras digan «{ENLACE_DE_PAGO}», no hay pago en la página. Un enlace solo se usa si también hay
-   registro y cupo en vivo (pagar aparta un lugar). Los pega Lázaro (o Claude con su sí) cuando existan en Stripe.
+   registro y cupo en vivo (pagar aparta un lugar). Se pegan cuando existan en Stripe.
    EXCEPCIÓN DEL 14-NOV: mientras registroApi sea null, el único y la serie se pagan DIRECTO en Stripe. El enlace pide
    el nombre del negocio y un teléfono, así el pedido queda guardado en Stripe. La página dice que, si la semana está
    llena, damos la fecha del siguiente lugar y devolvemos todo si no sirve. El mensual sigue por teléfono. */

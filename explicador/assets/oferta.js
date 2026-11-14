@@ -71,7 +71,7 @@
       },
       okGuion: "Anotamos que quieres ver tu tema en un guion antes de decidir. " +
         (WA ? "Te escribimos por WhatsApp" : "Te llamamos desde el " + TEL) +
-        " para pedirte el tema en una frase. Lázaro revisa cada tema y te dice si lo hacemos; no todos se aceptan. No pagas nada.",
+        " para pedirte el tema en una frase. El equipo revisa cada tema y te dice si lo hacemos; no todos se aceptan. No pagas nada.",
       okId: function (id) { return "Número de pedido: " + id + "."; },
       okPie: "Si cambias de idea, responde NO o BAJA y no te contactamos más.",
       sonidoOn: "Oír el video",
@@ -117,7 +117,7 @@
       },
       okGuion: "Noted: you want to see your topic as a script before deciding. " +
         (WA ? "We'll message you on WhatsApp" : "We'll call you from " + TEL) +
-        " to ask for your topic in one sentence. Lázaro reviews every topic and tells you whether we take it; not all are accepted. You pay nothing.",
+        " to ask for your topic in one sentence. Our team reviews every topic and tells you whether we take it; not all are accepted. You pay nothing.",
       okId: function (id) { return "Request number: " + id + "."; },
       okPie: "If you change your mind, reply NO or STOP and we won't contact you again.",
       sonidoOn: "Hear the video",
